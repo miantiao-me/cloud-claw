@@ -49,3 +49,25 @@
     },
   ],
 }
+{
+  "containers": [
+    {
+      "class_name": "AgentContainer",
+      "image": "./Dockerfile",
+    },
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "AgentContainer",
+        "name": "AGENT_CONTAINER",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "new_sqlite_classes": ["AgentContainer"],
+      "tag": "v1",
+    },
+  ],
+}
