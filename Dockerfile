@@ -117,7 +117,8 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" << 'EOFCONFIG'
     },
     "controlUi": {
       "allowInsecureAuth": true,
-      "allowedOrigins": ["https://open-flare.millennials-post-covid.com"]
+      "allowedOrigins": ["https://open-flare.millennials-post-covid.com"],
+      "dangerouslyAllowHostHeaderOriginFallback": true
     }
   },
   "browser": {
