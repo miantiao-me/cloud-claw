@@ -1,4 +1,4 @@
-# Cloud Claw (Cloudflare + OpenClaw)
+# Cloud Claw (Cloudflare + OpenClaw) 
 
 **Cloud Claw** is a containerized AI assistant that runs [OpenClaw](https://github.com/openclaw/openclaw) on Cloudflare Workers + Containers.
 
