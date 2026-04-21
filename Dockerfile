@@ -146,6 +146,18 @@ cd "$OPENCLAW_WORKSPACE_DIR"
 
 openclaw gateway --port 6658 --bind lan --allow-unconfigured &
 OPENCLAW_PID=$!
+
+# Auto-approve any pending device pairing requests. Cloudflare Containers has no
+# exec, and connections through the Worker are classified as "remote" by OpenClaw
+# (so silent local pairing is disabled). Access control is delegated to the
+# Worker's Basic Auth + Cloudflare Access in front of this container.
+(
+	while kill -0 "$OPENCLAW_PID" 2>/dev/null; do
+		sleep 5
+		openclaw devices approve --latest >/dev/null 2>&1 || true
+	done
+) &
+
 wait $OPENCLAW_PID
 EOF
 
