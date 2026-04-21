@@ -24,6 +24,13 @@
       "custom_domain": true,
     },
   ],
+  "vars": {
+    "SERVER_USERNAME": "agili",
+    "WORKER_URL": "https://openrouter.millennials-post-covid.com",
+    "S3_ENDPOINT": "https://7018afd37571b2583d8b5866864e98fb.r2.cloudflarestorage.com",
+    "S3_BUCKET": "cloud-claw-data",
+    "S3_PREFIX": "cloud-claw",
+  },
   "browser": {
     "binding": "BROWSER",
     "remote": true,
