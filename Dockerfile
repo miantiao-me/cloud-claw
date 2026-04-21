@@ -106,8 +106,7 @@ else
 	echo "[WARN] OPENCLAW_GATEWAY_TOKEN not set, will be auto-generated"
 fi
 
-if [ ! -f "$OPENCLAW_STATE_DIR/openclaw.json" ]; then
-	cat > "$OPENCLAW_STATE_DIR/openclaw.json" << 'EOFCONFIG'
+cat > "$OPENCLAW_STATE_DIR/openclaw.json" << 'EOFCONFIG'
 {
   "gateway": {
     "mode": "local",
@@ -117,7 +116,8 @@ if [ ! -f "$OPENCLAW_STATE_DIR/openclaw.json" ]; then
       "mode": "token"
     },
     "controlUi": {
-      "allowInsecureAuth": true
+      "allowInsecureAuth": true,
+      "allowedOrigins": ["https://open-flare.millennials-post-covid.com"]
     }
   },
   "browser": {
@@ -137,8 +137,7 @@ if [ ! -f "$OPENCLAW_STATE_DIR/openclaw.json" ]; then
   }
 }
 EOFCONFIG
-	echo "[INFO] Default config file created (local mode + allowInsecureAuth)"
-fi
+echo "[INFO] Config file written (local mode + allowInsecureAuth)"
 
 echo "[INFO] Starting OpenClaw Gateway..."
 echo "[INFO] Visit Web UI for initial setup on first use"
