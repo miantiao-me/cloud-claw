@@ -11,7 +11,7 @@
     "postinstall": "npm run lint"
   },
   "devDependencies": {
-    "@cloudflare/containers": "^0.1.0",
+    "@cloudflare/containers": "^0.3.2",
     "oxfmt": "^0.28.0",
     "oxlint": "^1.43.0",
     "typescript": "^5.9.3",
